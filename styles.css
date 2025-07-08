@@ -1,17 +1,35 @@
+:root {
+  --primary: #F1F1F1;
+  --secondary: #E5E5E5;
+  --text: #0F0F0F;
+}
+
+html[dark] {
+  --primary: #272727;
+  --secondary: #3F3F3F;
+  --text: #F1F1F1;
+}
+
 .yt-comments-enhanced-buttons {
-    width: 26px;
-    height: 26px;
-    border-radius: 20%;
-    border: none;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-size: 1.6rem;
-    margin: 0 1px 0 1px;
-    background-color: #F1F1F1;
-    color: #0F0F0F;
+  width: 26px;
+  height: 26px;
+  border-radius: 20%;
+  border: none;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 1px;
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+.yt-comments-enhanced-buttons:hover {
+  background-color: var(--secondary);
 }
 
 .yt-comments-enhanced-preview-container {
+  background-color: var(--secondary);
+  color: var(--text);
   margin-top: 6px;
   padding: 8px;
   border-radius: 5px;
@@ -20,36 +38,6 @@
 .yt-comments-enhanced-preview-container > span {
   margin-top: 6px;
   font-size: 1.2rem;
-}
-
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  .yt-comments-enhanced-buttons {
-    background-color: #272727;
-    color: #F1F1F1;
-  }
-  .yt-comments-enhanced-buttons:hover {
-    background-color: #3F3F3F;
-  }
-  .yt-comments-enhanced-preview-container {
-    background-color: #3F3F3F;
-    color: #F1F1F1;
-  }
-}
-
-/* Light mode styles */
-@media (prefers-color-scheme: light) {
-  .yt-comments-enhanced-buttons {
-    background-color: #F1F1F1;
-    color: #0F0F0F;
-  }
-  .yt-comments-enhanced-buttons:hover {
-    background-color: #E5E5E5;
-  }
-  .yt-comments-enhanced-preview-container {
-    background-color: #E5E5E5;
-    color: #0F0F0F;
-  }
 }
 
 .yt-comments-enhanced-bold {

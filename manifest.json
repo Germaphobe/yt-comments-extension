@@ -1,13 +1,14 @@
 {
     "manifest_version": 3,
     "name": "YouTube Comments Enhanced",
-    "version": "0.1",
-    "web_accessible_resources": [
-        {
-            "resources": ["assets/*.svg"],
-            "matches": ["https://*.youtube.com/*"]
-        }
-    ],
+    "version": "1.0",
+    "description": "Add button shortcuts for formatting (bold, italic, strikethrough, subscript) when writing YouTube comments",
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
     "content_scripts": [
         {
             "matches": [
