@@ -75,6 +75,7 @@ function configureCommentBox(commentBox) {
   });
 
   // Update preview when input is typed
+  input.addEventListener("click", updatePreview);
   input.addEventListener("input", updatePreview);
   input.addEventListener("blur", updatePreview);
 
@@ -138,8 +139,20 @@ function superscriptSelection() {
 
     const newText = toggleSuperscript(selectedText);
 
+    // Create a text node with the new content
+    const newNode = document.createTextNode(newText);
+
+    // Replace the selected content
     range.deleteContents();
-    range.insertNode(document.createTextNode(newText));
+    range.insertNode(newNode);
+
+    // Reselect the new content
+    const newRange = document.createRange();
+    newRange.setStartBefore(newNode);
+    newRange.setEndAfter(newNode);
+
+    selection.removeAllRanges();
+    selection.addRange(newRange);
 }
 
 function toggleSuperscript(str) {
@@ -167,6 +180,7 @@ function toggleSuperscript(str) {
     '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾', ',': '˒', '.': '⋅'
   };
 
+  // Inverse of superscriptMap, maps superscript characters to normal characters
   const normalMap = {};
   for (const [normal, superChar] of Object.entries(superscriptMap)) {
     normalMap[superChar] = normal;
