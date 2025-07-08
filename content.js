@@ -74,10 +74,9 @@ function configureCommentBox(commentBox) {
     emojiButton.insertAdjacentElement("afterend", btn);
   });
 
-  // Update preview when input is typed
-  input.addEventListener("click", updatePreview);
-  input.addEventListener("input", updatePreview);
-  input.addEventListener("blur", updatePreview);
+  input.addEventListener("input", updatePreview);   // Update preview when input is typed
+  input.addEventListener("focus", updatePreview);   // Update preview when input is focused
+  input.addEventListener("blur", updatePreview);    // Update preview when input is unfocused
 
   function createSyntaxButton({ label, classes, onClick }) {
     const button = document.createElement("button");
